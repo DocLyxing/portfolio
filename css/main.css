@@ -15,6 +15,7 @@ body{
 }
 
 nav{
+    z-index: 8;
     position: absolute;
     width: 100%;
     height: 4em;
@@ -26,6 +27,8 @@ nav{
 main{
     height: 100vh;
     position: fixed;
+    right: 0;
+    left: 0;
     /*background-image: linear-gradient(rgb(131, 109, 196), rgb(129, 57, 57));
     background-size: cover;
     background-position: absolute;*/
@@ -47,7 +50,7 @@ nav a, .bottom-footer a{
     background-position: center bottom;
     transition: all .3s ease-out;
     text-decoration: none;
-    background-size: 0 0.6px, auto;
+    background-size: 0 1px, auto;
 }
 
 nav a:hover, .bottom-footer a:hover{
@@ -162,7 +165,7 @@ footer h3{
 .footer-navigation li a:hover{
     font-weight: normal;
     color: rgb(255, 255, 255);
-    background-size: 0 0.6px, auto;
+    background-size: 0 1px, auto;
 }
 
 
