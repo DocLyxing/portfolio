@@ -1,9 +1,3 @@
-var scroll = 0;
-var projet = 2;
-var projetMax = 4;
-
-var projetDisplayed = false;
-
 var mainPresSection = document.createElement("section");
 var childPresSection = document.createElement("section");
 var presTitle = document.createElement("h2");
@@ -18,10 +12,33 @@ presPara.textContent="Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
 presImg.src = "../rsc/img/cadre.png";
 
 mainPresSection.style.overflow = "hidden";
+mainPresSection.style.top = innerHeight +"px";
 
 childPresSection.appendChild(presTitle);
 childPresSection.appendChild(presPara);
 mainPresSection.appendChild(childPresSection);
 mainPresSection.appendChild(presImg);
 
-document.getElementById("a").appendChild(mainPresSection);
+
+
+
+
+var scroll = 0;
+var shown = false;
+
+document.addEventListener("wheel", (e) =>{
+    scroll+=e.deltaY;
+    if(scroll > 0){
+        if(!shown){
+            document.getElementById("a").appendChild(mainPresSection);
+            shown = true;
+        } else {
+            mainPresSection.style.top = innerHeight - scroll +"px";
+        }
+    } else {
+        if(shown){
+            mainPresSection.hidden = false;
+            shown = false;
+        }
+    }
+});
