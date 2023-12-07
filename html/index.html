@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Elise LEROY</title>
+    <script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
+    <script type="x-shader/x-fragment" id="image">
+        
+        precision highp float;
+        
+    uniform float iTime;
+    uniform vec2 iResolution;
+    uniform vec2 iMouse;
+    
+    float triangleFunc(in float value, in float cap);
+    
+    vec2 fade(vec2 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
+    vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+    
+    float cnoise21(vec2 P){
+        vec4 Pi = floor(P.xyxy) + vec4(0.0, 0.0, 1.0, 1.0);
+        vec4 Pf = fract(P.xyxy) - vec4(0.0, 0.0, 1.0, 1.0);
+      Pi = mod(Pi, 289.0); // To avoid truncation effects in permutation
+      vec4 ix = Pi.xzxz;
+      vec4 iy = Pi.yyww;
+      vec4 fx = Pf.xzxz;
+      vec4 fy = Pf.yyww;
+      vec4 i = permute(permute(ix) + iy);
+      vec4 gx = 2.0 * fract(i * 0.0243902439) - 1.0; // 1/41 = 0.024...
+      vec4 gy = abs(gx) - 0.5;
+      vec4 tx = floor(gx + 0.5);
+      gx = gx - tx;
+      vec2 g00 = vec2(gx.x,gy.x);
+      vec2 g10 = vec2(gx.y,gy.y);
+      vec2 g01 = vec2(gx.z,gy.z);
+      vec2 g11 = vec2(gx.w,gy.w);
+      vec4 norm = 1.79284291400159 - 0.85373472095314 * vec4(dot(g00, g00), dot(g01, g01), dot(g10, g10), dot(g11, g11));
+      g00 *= norm.x;
+      g01 *= norm.y;
+      g10 *= norm.z;
+      g11 *= norm.w;
+      float n00 = dot(g00, vec2(fx.x, fy.x));
+      float n10 = dot(g10, vec2(fx.y, fy.y));
+      float n01 = dot(g01, vec2(fx.z, fy.z));
+      float n11 = dot(g11, vec2(fx.w, fy.w));
+      vec2 fade_xy = fade(Pf.xy);
+      vec2 n_x = mix(vec2(n00, n01), vec2(n10, n11), fade_xy.x);
+      float n_xy = mix(n_x.x, n_x.y, fade_xy.y);
+      return 2.3 * n_xy;
+    }
+    
+    float random(vec2 p) {
+        vec2 k1 = vec2(
+            23.14069263277926, // e^pi (Gelfond's constant)
+            2.665144142690225 // 2^sqrt(2) (Gelfond-Schneider constant)
+      );
+      return fract(
+        cos(dot(p, k1)) * 12345.6789
+      );
+    }
+    
+    const vec3 black = vec3(0.0);
+    const vec3 color1 = vec3(0.89, 0.34, 0.11);
+    const vec3 color2 = vec3(0.56, 0.64, 0.64);
+    const vec3 color3 = vec3(0.16, 0.26, 0.47);
+    
+    float triangleFunc(in float value, in float cap){
+        return abs(mod(value,cap)-cap/2.)*2.;
+    }
+    
+    float triangleDownFunc(in float value, in float cap){
+        return triangleFunc(value, cap)*2.-cap;
+    }
+    
+    void main() {
+        float col_redChannX;
+        
+        float off_redChannX = 0.;
+        float freq_redChannX = 3.;
+        float rot_redChannX = 1.;
+        vec2 vRot_redChannX;
+        
+        
+        float col_redChannY; 
+        
+        float off_redChannY = 0.;
+        float freq_redChannY = 2.;
+        float rot_redChannY = 1.;
+        float vRot_redChannY;
+        
+        float pi = radians(180.);
+        
+        vec2 rMouse = iMouse/iResolution; 
+        
+      vec2 uv = gl_FragCoord.xy/iResolution.xy;
+      vec2 seed = uv * 1.5 * (iMouse + 0.3 * (length(iMouse) + 0.5));
+      float n = cnoise21(seed) + length(iMouse) * 0.9;
+      
+      float ml = pow(length(iMouse), 2.5) * 0.15;
+      float n1 = smoothstep(0.0, 0.0 + 0.2, n);
+      vec3 color = mix(black, color1, n1);
+      
+      float n2 = smoothstep(0.1 + ml, 0.1 + ml + 0.2, n);
+      color = mix(color, color2, n2);
+    
+      float n3 = smoothstep(0.2 + ml, 0.2 + ml + 0.2, n);
+      color = mix(color, color3, n3);
+      
+      float n4 = smoothstep(0.3 + ml, 0.3 + ml + 0.2, n);
+      color = mix(color, black, n4);
+      
+      vec2 uvrandom = uv;
+      uvrandom.y *= random(vec2(uvrandom.y, 0.4));
+      
+      color.r = sin(freq_redChannX*uv.x*uv.y+rMouse.x*uv.x*2.);
+      
+      
+      
+      //RED CHAN X
+      rot_redChannX = rMouse.x/2.;
+      off_redChannX = rMouse.y*2.;
+      
+      float xRot = triangleDownFunc(rot_redChannX,1.);
+      float yRot = triangleDownFunc(rot_redChannX-0.5,1.)/2.;
+      
+      vRot_redChannX = vec2(
+          cos(2.*pi*rot_redChannX),
+          cos(2.*pi*(rot_redChannX-0.25))
+          );
+          
+          float rot_redChannFinal = vRot_redChannX.x*uv.x + vRot_redChannX.y*uv.y;
+          col_redChannX = sin(freq_redChannX*( rot_redChannFinal) + off_redChannX);
+          
+          //RED CHAN Y
+          rot_redChannX = rMouse.x/2.;
+          off_redChannX = rMouse.y*2.+5.;
+          
+          col_redChannY = sin(freq_redChannY*cos(3.*pi*rot_redChannX*rMouse.x)*uv.y + off_redChannY);
+          col_redChannY += uv.x*rMouse.x*cos(uv.y*8.);
+          
+          
+          color.r = (col_redChannX + col_redChannY)/2.;
+
+      color.rgb += random(uvrandom) * 0.05;
+
+      float clampedR =  max(min(color.r, 1.),0.);
+      
+      vec3 fColor = mix(color2*clampedR, color1*clampedR, clampedR);
+      fColor = mix(color3*clampedR, fColor, clampedR);
+
+      gl_FragColor = vec4(fColor*2., 1.0);
+    }
+  </script>
+  <script src="../js/test.js"></script>
+  <style>
+      .shader-web-background-fallback {
+          background: url("https://placekitten.com/666/666");
+          background-position: center;
+          background-size: cover;
+          background-attachment: fixed;
+        }
+        </style>
+
+</head>
+<body>
+    <nav>
+        <ul class="center-nav">
+            <li><a>Présentation</a></li>
+            <li><a>Formations</a></li>
+            <li><a>Compétences</a></li>
+            <li><a>Expériences</a></li>
+            <li><a>Projets</a></li>
+            <li><a>Contacts</a></li>
+        </ul>
+    </nav>
+    
+    <main id="a">
+        <section class="dynamic-welcome-page">
+            <section class="name-catch-phrase">
+                <h1 class = "name-in-big">Elise LEROY</h1>
+                <p>Ravie de vous rencontrer</p>
+            </section>
+            <section>
+                <ul class ="three-main-points">
+                    <li>Etudiante en Informatique</li>
+                    <li>Basée sur Paris et Lille</li>
+                    <li>A la recherche d'une alternance pour 2024</li>
+                </ul>  
+            </section>
+        </section>
+    </main>
+    
+    <footer>
+        <section class="up-footer">
+            <ul class="footer-mail-linkedin">
+                <li><h3>leroy.el@outlook.com</h3></li>
+                <li class="footer-linkedin"><a href="https://www.linkedin.com/in/leroy-elise/"><img src="../rsc/img/linkedin.png" alt="logo linkedin" class="linkedin"></a></li>
+            </ul>
+            <ul class="footer-phone">
+                <li><h3>Un coup de fil ?</h3></li>
+                <li>+33 6 95 35 62 52</li>
+                <li>FR JP EN</li>
+            </ul>
+            <ul classe="footer-localisation">
+                <li><h3>Mobilité</h3></li>
+                <li>Paris</li>
+                <li>&</li>
+                <li>Lille</li>
+            </ul>
+            <ul class="footer-navigation">
+                <li><h3>Navigation</h3></li>
+                <li><a>Présentation</a></li>
+                <li><a>Formations</a></li>
+                <li><a>Compétences</a></li>
+                <li><a>Expériences</a></li>
+                <li><a>Projets</a></li>
+                <li><a>Contacts</a></li>
+            </ul>
+        </section>
+        <section class="bottom-footer">
+            <div><a href="#">Remonter &#9650;</a></div>
+            <div>2023 | Elise LEROY</div>
+        </section>
+    </footer>
+    
+    <script src="../js/page-animation.js"></script>
+</body>
+</html>
