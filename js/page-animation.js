@@ -3,7 +3,7 @@ const scrollLerpSpeed = 0.1;
 var mainPresSection = document.createElement("section");
 var childPresSection = document.createElement("section");
 var presTitle = document.createElement("h2");
-var presPara = document.createElement("p");
+var presPara = document.createElement("div");
 var presImg = document.createElement("img");
 
 mainPresSection.className = "presentationSection";

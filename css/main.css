@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 html{
     scroll-behavior: smooth;
 }
@@ -11,6 +12,7 @@ body{
     width: 100%;
     height: 100%;
     text-decoration: none;
+    font-family: 'DM Sans';
 
 }
 
@@ -20,7 +22,7 @@ nav{
     width: 100%;
     height: 4em;
     background-color: transparent;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'DM Sans'; 
     color: rgb(255, 255, 255);
 }
 
@@ -45,6 +47,7 @@ a:link{
 
 nav a, .bottom-footer a{
     display: inline-block;
+    padding-bottom: 4px;
     background-image: linear-gradient(white, white);
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -53,10 +56,11 @@ nav a, .bottom-footer a{
     background-size: 0 1px, auto;
 }
 
+
 nav a:hover, .bottom-footer a:hover{
     font-weight: normal;
     color: rgb(255, 255, 255);
-    background-size: 100% 0.6px, auto;
+    background-size: 30% 0.6px, auto;
 }
 
 li{
@@ -81,7 +85,6 @@ li{
 
 .name-in-big{
     font-size: 6em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .name-catch-phrase {
@@ -101,7 +104,6 @@ li{
     margin: 6em 7em 0em 4em;
     text-align: end;
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .three-main-points li:not(:first-child){
@@ -126,7 +128,6 @@ footer{
     color: rgb(255, 255, 255);
     bottom: 0;
     margin-bottom: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 footer h3{

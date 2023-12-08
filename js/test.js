@@ -5,7 +5,7 @@ var mouseY;
 var pointX;
 var pointY;
 
-var lerpSpeed = 0.2; //entre 0 et 1, 1 = changement instantanné, 0 = pas de changement
+var lerpSpeed = 0.02; //entre 0 et 1, 1 = changement instantanné, 0 = pas de changement
 
 var pointLerp = 1-lerpSpeed;
 var mouseLerp = lerpSpeed;
@@ -23,43 +23,17 @@ class Vector2 {
 var velocity = new Vector2(0, 0);
 var pos = new Vector2(0, 0);
 
+function lerp(a, b, t){
+  return a + (b-a)*t;
+}
+
 document.addEventListener("mousemove", (event) => {
    mouseX = event.clientX;
    mouseY = event.clientY;
 });
 
-document.addEventListener("keydown", (event) => {
-    switch(event.key){
-        case "z" :
-            velocity.x = 1;
-            break;
-        case "s" :
-            velocity.x = -1;
-            break;   
-        case "d" :
-            velocity.y = 1;
-            break;
-        case "q" :
-            velocity.y = -1;
-            break;
-    }
-});
-
-document.addEventListener("keyup", (event) => {
-    switch(event.key){
-        case "z" :
-            velocity.x = 0;
-            break;
-        case "s" :
-            velocity.x = 0;
-            break;   
-        case "d" :
-            velocity.y = 0;
-            break;
-        case "q" :
-            velocity.y = 0;
-            break;
-    }
+document.addEventListener("wheel", (event) => {
+  targetScroll += event.deltaY;
 });
 
 shaderWebBackground.shade({
@@ -81,11 +55,6 @@ shaderWebBackground.shade({
   onBeforeFrame: (ctx) => {
     pointX = pointLerp*pointX + mouseLerp*mouseX;
     pointY = pointLerp*pointY + mouseLerp*mouseY;
-    pos.x += velocity.x*0.1;
-    pos.y += velocity.y*0.1;
-
-    ctx.posX = pos.x;
-    ctx.posY = pos.y;
 
     ctx.shaderMouseX = ctx.toShaderX(pointX);
     ctx.shaderMouseY = ctx.toShaderY(pointY);
@@ -96,7 +65,6 @@ shaderWebBackground.shade({
         iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
         iResolution: (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
         iMouse: (gl, loc, ctx) => gl.uniform2f(loc, ctx.shaderMouseX, ctx.shaderMouseY),
-        iPos: (gl, loc, ctx) => gl.uniform2f(loc, ctx.posX, ctx.posY),
       }
     }
   },

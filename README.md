@@ -5,3 +5,4 @@ https://doclyxing.github.io/portfolio/
 
 ## inspo
 https://mango-media.eu/#
+https://tamalsen.dev/

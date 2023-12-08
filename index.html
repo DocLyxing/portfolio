@@ -67,7 +67,8 @@
     }
     
     const vec3 black = vec3(0.0);
-    const vec3 color1 = vec3(0.89, 0.34, 0.11);
+    //0.89, 0.34, 0.11
+    const vec3 color1 = vec3(0.5, 0.25, 0.11);
     const vec3 color2 = vec3(0.56, 0.64, 0.64);
     const vec3 color3 = vec3(0.16, 0.26, 0.47);
     
@@ -178,30 +179,32 @@
       float cosCR = cos(clampedR);
       fColor = mix(color2*clampedR, color1*clampedR, max(cosThing, 0.));
         */
+
       gl_FragColor = vec4(fColor, 1.0);
     }
   </script>
   <script src="./js/ScrollItem.js"></script>
   <script src="./js/test.js"></script>
   <style>
-      .shader-web-background-fallback {
-          background: url("https://placekitten.com/666/666");
-          background-position: center;
-          background-size: cover;
-          background-attachment: fixed;
-        }
-        </style>
-
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+    .shader-web-background-fallback {
+        background: url("https://placekitten.com/666/666");
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    </style>
 </head>
+
 <body>
     <nav>
         <ul class="center-nav">
-            <li><a>Présentation</a></li>
-            <li><a>Formations</a></li>
-            <li><a>Compétences</a></li>
-            <li><a>Expériences</a></li>
-            <li><a>Projets</a></li>
-            <li><a>Contacts</a></li>
+            <li><a>// Présentation</a></li>
+            <li><a>// Formations</a></li>
+            <li><a>// Compétences</a></li>
+            <li><a>// Expériences</a></li>
+            <li><a>// Projets</a></li>
+            <li><a>// Contacts</a></li>
         </ul>
     </nav>
     
