@@ -45,7 +45,11 @@ a:link{
     color: inherit;
 }
 
-nav a, .bottom-footer a{
+.nav-link:not(:hover) {
+    color: rgba(0, 128, 0, 0.308);
+}
+
+.bottom-footer a{
     display: inline-block;
     padding-bottom: 4px;
     background-image: linear-gradient(white, white);
@@ -56,8 +60,7 @@ nav a, .bottom-footer a{
     background-size: 0 1px, auto;
 }
 
-
-nav a:hover, .bottom-footer a:hover{
+.bottom-footer a:hover{
     font-weight: normal;
     color: rgb(255, 255, 255);
     background-size: 30% 0.6px, auto;
