@@ -1,8 +1,22 @@
 .presentationSection{
-    background-image: linear-gradient(rgb(131, 109, 196), rgb(129, 57, 57));
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
     background-size: cover;
     background-position: absolute;
     width: 100%;
     box-shadow: 5px -5px 20px 2px rgba(0,0,0,.8);
     height: 1200px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.presTextSection h2{
+
+}
+
+.presentationSection img{
+    width: 12em;
+    height: 12em;
+    object-fit: cover;
 }
