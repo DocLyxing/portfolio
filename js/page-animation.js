@@ -11,7 +11,7 @@ childPresSection.className = "presentationTextSection";
 
 presTitle.textContent = "Enchantée";
 presPara.textContent="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste voluptas molestiae architecto, placeat eligendi dignissimos? Amet odio qui laborum placeat quod eligendi, facere assumenda fuga aspernatur nemo at? Est, reiciendis."
-presImg.src = "../rsc/img/cadre.png";
+presImg.src = "./rsc/img/cadre.png";
 
 mainPresSection.style.overflow = "hidden";
 mainPresSection.style.top = innerHeight +"px";
