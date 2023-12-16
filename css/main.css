@@ -60,7 +60,7 @@ nav a, .bottom-footer a{
 nav a:hover, .bottom-footer a:hover{
     font-weight: normal;
     color: rgb(255, 255, 255);
-    background-size: 30% 0.6px, auto;
+    background-size: 100% 0.6px, auto;
 }
 
 li{
