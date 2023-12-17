@@ -10,6 +10,9 @@ var lerpSpeed = 0.02; //entre 0 et 1, 1 = changement instantanné, 0 = pas de ch
 var pointLerp = 1-lerpSpeed;
 var mouseLerp = lerpSpeed;
 
+var targetScroll;
+var scoll;
+
 class Vector2 {
     x;
     y;
@@ -48,6 +51,8 @@ shaderWebBackground.shade({
     pointY = mouseY;
     // for convenience you can store your attributes on context
     ctx.iFrame = 0;
+    targetScroll = 0;
+    scroll = 0;
   },
   onResize: (width, height, ctx) => {
     ctx.iMinDimension = Math.min(width, height);
@@ -58,6 +63,7 @@ shaderWebBackground.shade({
 
     ctx.shaderMouseX = ctx.toShaderX(pointX);
     ctx.shaderMouseY = ctx.toShaderY(pointY);
+    scroll = lerp(scroll, targetScroll, 0.1);
   },
   shaders: {
     image: {
@@ -65,6 +71,8 @@ shaderWebBackground.shade({
         iTime: (gl, loc) => gl.uniform1f(loc, performance.now() / 1000),
         iResolution: (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
         iMouse: (gl, loc, ctx) => gl.uniform2f(loc, ctx.shaderMouseX, ctx.shaderMouseY),
+        iScroll: (gl, loc) => gl.uniform1f(loc, scroll),
+
       }
     }
   },

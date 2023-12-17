@@ -15,6 +15,7 @@
     uniform float iTime;
     uniform vec2 iResolution;
     uniform vec2 iMouse;
+    uniform float iScroll;
     
     float triangleFunc(in float value, in float cap);
     float lerp(in float a, in float b, in float i){
@@ -101,6 +102,7 @@
         vec2 rMouse = iMouse/iResolution; 
         
       vec2 uv = gl_FragCoord.xy/iResolution.xy;
+      //uv.y -= (iScroll/10000.);
       vec2 seed = uv * 1.5 * (iMouse + 0.3 * (length(iMouse) + 0.5));
       float n = cnoise21(seed) + length(iMouse) * 0.9;
       
@@ -125,8 +127,13 @@
       
       
       //RED CHAN X
-      rot_redChannX = rMouse.x/4.7;
+      float reducedMouseX = rMouse.x/(1.+pow(abs(iScroll/10000.),2.));
+      reducedMouseX = rMouse.x/(1.+pow(abs(iScroll/100000.),4.));
+      reducedMouseX = rMouse.x;
+      rot_redChannX = reducedMouseX;
+      rot_redChannX /= 4.7;
       off_redChannX = rMouse.y*5.2;
+
       
       float xRot = triangleDownFunc(rot_redChannX,1.);
       float yRot = triangleDownFunc(rot_redChannX-0.5,1.)/2.;
@@ -140,11 +147,11 @@
           col_redChannX = sin(freq_redChannX*( rot_redChannFinal) + off_redChannX);
           
           //RED CHAN Y
-          rot_redChannX = rMouse.x/2.;
+          rot_redChannX = reducedMouseX/2.;
           off_redChannX = rMouse.y*2.+5.;
           
-          col_redChannY = sin(freq_redChannY*cos(3.*pi*rot_redChannX*rMouse.x)*uv.y + off_redChannY);
-          col_redChannY += uv.x*rMouse.x*cos(uv.y*8.);
+          col_redChannY = sin(freq_redChannY*cos(3.*pi*rot_redChannX*reducedMouseX)*uv.y + off_redChannY);
+          col_redChannY += uv.x*reducedMouseX*cos(uv.y*8.);
           
           
           color.r = (col_redChannX + col_redChannY)/2.;
@@ -197,9 +204,19 @@
 </head>
 
 <body>
-    <nav>
+    <nav id="nav">
         <ul class="center-nav">
-            <li><a>Présentation</a></li>
+            <li><a href="#presentationSection">Présentation</a></li>
+            <li><a>Formations</a></li>
+            <li><a>Compétences</a></li>
+            <li><a>Expériences</a></li>
+            <li><a>Projets</a></li>
+            <li><a>Contacts</a></li>
+        </ul>
+    </nav>
+    <nav id="fixedNav">
+        <ul class="center-nav">
+            <li><a href="#presentationSection">Présentation</a></li>
             <li><a>Formations</a></li>
             <li><a>Compétences</a></li>
             <li><a>Expériences</a></li>
@@ -220,6 +237,16 @@
                     <li>Basée sur Paris et Lille</li>
                     <li>A la recherche d'une alternance pour 2024</li>
                 </ul>  
+            </section>
+        </section>
+        <div id="transition"></div>
+        <section id ="after-welcome-page">
+            <section id = "presentationSection">
+                <section class="presentationTextSection">
+                    <h2>Enchantée</h2>
+                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste voluptas molestiae architecto, placeat eligendi dignissimos? Amet odio qui laborum placeat quod eligendi, facere assumenda fuga aspernatur nemo at? Est, reiciendis.</div>
+                </section>
+                <img src="./rsc/img/cadre.png" alt="cadre">
             </section>
         </section>
     </main>
@@ -243,7 +270,7 @@
             </ul>
             <ul class="footer-navigation">
                 <li><h3>Navigation</h3></li>
-                <li><a>Présentation</a></li>
+                <li><a href="#presentationSection">Présentation</a></li>
                 <li><a>Formations</a></li>
                 <li><a>Compétences</a></li>
                 <li><a>Expériences</a></li>
@@ -256,7 +283,7 @@
             <div>2023 | Elise LEROY</div>
         </section>
     </footer>
+    <script src="./js/navbar.js"></script>
     
-    <script src="./js/page-animation.js"></script>
 </body>
 </html>
