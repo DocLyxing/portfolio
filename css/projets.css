@@ -1,0 +1,143 @@
+#projetsSection{
+    margin-top: 5em;
+}
+
+#projetsSection h1{
+    color: #ececec;
+    font-size: 3em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-weight: 2000;
+    display: flex;
+    justify-content: center;    
+}
+
+#projetsSection img{
+    width: 25em;
+    height: 25em;
+}
+
+.main-projets-container{
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.main-projets-container div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.main-projets-container h3{
+    color: #ececec;
+    font-size: 1.5em;
+    margin-bottom: 0.2em;
+    margin-top: 1em;
+    font-weight: 2000;
+    display: flex;
+    justify-content: center;    
+}
+
+.main-projets-container span{
+    color: #ececec;
+}
+
+
+
+.projet-title-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+
+.projet-image-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.projet-titre-deploi{
+    padding-right: 50px;
+
+}
+
+.projet-descr {
+    position: relative;
+    min-width: 250px;
+    min-height: 300px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../rsc/img/ssh.png");
+    color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 20px;
+    line-height: px;
+    margin: 20px;
+    margin-bottom: 5px;
+    transition: all 0.5s ease;
+    
+}
+
+.projet-descr-agile {
+    position: relative;
+    min-width: 300px;
+    min-height: 300px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../rsc/img/agile.png");
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 20px;
+    line-height: px;
+    margin: 20px;
+    margin-bottom: 5px;
+    transition: all 0.5s ease;
+    
+}
+
+
+.projet-descr-agile:hover {
+    color: #ececec;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.856), rgba(0, 0, 0, 0.856)), url("../rsc/img/agile.png");
+    transition: all 0.5s ease;
+}
+
+
+.projet-descr:hover {
+    color: #ececec;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.856), rgba(0, 0, 0, 0.856)), url("../rsc/img/ssh.png");
+    transition: all 0.5s ease;
+}
+
+
+
+.vide{
+    visibility: hidden;
+}
+
+.vide-milieu{
+    visibility: hidden;
+
+}

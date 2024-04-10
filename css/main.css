@@ -22,7 +22,7 @@ nav{
     height: 4em;
     background-color: transparent;
     font-family: 'DM Sans'; 
-    color: rgb(255, 255, 255);
+    color: #ececec;
     
 }
 
@@ -47,7 +47,7 @@ a:link{
 nav a, .bottom-footer a{
     display: inline-block;
     padding-bottom: 4px;
-    background-image: linear-gradient(white, white);
+    background-image: linear-gradient(#ececec, #ececec);
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all .3s ease-out;
@@ -58,14 +58,14 @@ nav a, .bottom-footer a{
 
 nav a:hover, .bottom-footer a:hover{
     font-weight: normal;
-    color: rgb(255, 255, 255);
+    color: #ececec;
     background-size: 100% 0.6px, auto;
 }
 
 #fixedNav {
     position: fixed;
     top: 0px;
-    background-color: black;
+    background-color: rgb(12, 12, 12);
 }
 
 li{
@@ -85,6 +85,7 @@ li{
 
 .dynamic-welcome-page{
     width: 100%;
+    height: 80vh;
     padding-top: 10em;
 }
 
@@ -93,7 +94,7 @@ li{
 }
 
 .name-catch-phrase {
-    color: white;
+    color: #ececec;
     margin-left: 6em;
     margin-bottom: 0;
 }
@@ -104,11 +105,11 @@ li{
     margin-left: 0em;
 }
 .three-main-points{
-
-    right: 0;
-    margin: 6em 7em 0em 4em;
-    text-align: end;
-    color: white;
+    font-size: 1.2rem;
+    left: 0;
+    margin: 6em 7em 0em 7em;
+    text-align: start ;
+    color: #ececec;
 }
 
 .three-main-points li:not(:first-child){
@@ -116,21 +117,27 @@ li{
 }
 
 .three-main-points li:nth-child(2){
-    padding-right: 4em;
+    padding-left: 4em;
 }
 
 .three-main-points li:nth-child(3){
-    padding-right: 7em;
+    padding-left: 7em;
+}
+
+.three-main-points p {
+    text-align: start;
 }
 
 #transition{
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
-    height: 15em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(12, 12, 12));
+    height: 5em;
     width: 100%;
 }
 
 #after-welcome-page{
     position : relative;
+    background-color: rgb(12, 12, 12);
+
 }
 
 
@@ -140,7 +147,7 @@ footer{
     
     position: relative;
     background-color: black;
-    color: rgb(255, 255, 255);
+    color: #ececec;
     top: 0;
     margin-bottom: 0;
 }
@@ -170,7 +177,7 @@ footer h3{
 
 .footer-navigation li a{
     display: inline-block;
-    background-image: linear-gradient(white, white);
+    background-image: linear-gradient(#ececec, #ececec);
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all .3s ease-out;
@@ -180,7 +187,7 @@ footer h3{
 
 .footer-navigation li a:hover{
     font-weight: normal;
-    color: rgb(255, 255, 255);
+    color: #ececec;
     background-size: 0 1px, auto;
 }
 
@@ -216,6 +223,17 @@ footer h3{
     font-size: 0.7rem;
 }
 
+
+.point {
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    display: none;
+}
+
+.point.visible {
+    opacity: 1;
+    display: block;
+}
 
 
 

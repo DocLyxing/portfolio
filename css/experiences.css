@@ -1,0 +1,71 @@
+#experiencesSection{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+    color: #ececec;
+}
+
+#experiencesSection h1{
+    color: #ececec;
+    font-size: 3em;
+    margin-bottom: 1em;
+    margin-top: 2em;
+    font-weight: 2000;
+    display: flex;
+    justify-content: center;    
+}
+
+.experience-main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.experience-sub-container{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-left: 2px solid #2f2d96;
+    margin-left: 2em;
+}
+
+.experience-date{
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 17em;
+    margin-bottom: 0.5em;
+}
+
+.experience-descr{
+    padding-left:2em;
+}
+
+.experience-descr h2{
+    font-size: 1.3em;
+    font-weight: 2000;
+    margin-bottom: 30px;
+    display: inline-block;
+    background: linear-gradient(to top, #2f2d96 0%, #ad5d11 30%, transparent 20%);
+}
+
+.experience-descr h3{
+    font-size: 1em;
+    font-weight: 2000;
+    margin-bottom: 30px;
+}
+
+.experience-descr img{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.experience-descr {
+    text-align: justify ;
+}

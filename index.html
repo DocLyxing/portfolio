@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/presentation.css">
+    <link rel="stylesheet" href="./css/formation.css">
+    <link rel="stylesheet" href="./css/competences.css">
+    <link rel="stylesheet" href="./css/projets.css">
+    <link rel="stylesheet" href="./css/experiences.css">
     <title>Elise LEROY</title>
     <script src="https://xemantic.github.io/shader-web-background/dist/shader-web-background.min.js"></script>
     <script type="x-shader/x-fragment" id="image">
@@ -206,22 +210,24 @@
 <body>
     <nav id="nav">
         <ul class="center-nav">
+            <li><a href="#">Accueil</a></li>
             <li><a href="#presentationSection">Présentation</a></li>
-            <li><a>Formations</a></li>
-            <li><a>Compétences</a></li>
-            <li><a>Expériences</a></li>
-            <li><a>Projets</a></li>
-            <li><a>Contacts</a></li>
+            <li><a href="#formationSection">Formations</a></li>
+            <li><a href="#competenceSection">Compétences</a></li>
+            <li><a href="#projetsSection">Projets</a></li>
+            <li><a href="#experiencesSection">Expériences</a></li>
+            <li><a href="#footer">Contacts</a></li>
         </ul>
     </nav>
     <nav id="fixedNav">
         <ul class="center-nav">
+            <li><a href="#">Accueil</a></li>
             <li><a href="#presentationSection">Présentation</a></li>
-            <li><a>Formations</a></li>
-            <li><a>Compétences</a></li>
-            <li><a>Expériences</a></li>
-            <li><a>Projets</a></li>
-            <li><a>Contacts</a></li>
+            <li><a href="#formationSection">Formations</a></li>
+            <li><a href="#competenceSection">Compétences</a></li>
+            <li><a href="#projetsSection">Projets</a></li>
+            <li><a href="#experiencesSection">Expériences</a></li>
+            <li><a href="#footer">Contacts</a></li>
         </ul>
     </nav>
     
@@ -233,25 +239,257 @@
             </section>
             <section>
                 <ul class ="three-main-points">
-                    <li>Etudiante en Informatique</li>
-                    <li>Basée sur Paris et Lille</li>
-                    <li>A la recherche d'une alternance pour 2024</li>
+                    <li class="point">Etudiante en Informatique des systèmes et réseaux</li>
+                    <li class="point">Apprentie Ingénieur système, réseaux et DevOps</li>
+                    <li class="point"><p>Au ministère de l'Économie et des Finances et de la Relance</br>à la Direction générale du Trésor</p></li>
                 </ul>  
             </section>
-        </section>
+        </section>text-align: center;
         <div id="transition"></div>
-        <section id ="after-welcome-page">
+
+
             <section id = "presentationSection">
                 <section class="presentationTextSection">
                     <h2>Enchantée</h2>
-                    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste voluptas molestiae architecto, placeat eligendi dignissimos? Amet odio qui laborum placeat quod eligendi, facere assumenda fuga aspernatur nemo at? Est, reiciendis.</div>
+                    <div>Etudiante en deuxième année de BUT informatique à l'IUT de Lille, je suis <span style="color: rgb(196, 103, 41);">alternante</span> depuis la rentrée 2024 dans <span style="color: rgb(196, 103, 41);">l'exploitation des systèmes et réseaux</span> ! J'ai un intérêt particulier pour la couche infrastructure et physique. </div>
                 </section>
-                <img src="./rsc/img/cadre.png" alt="cadre">
+                <img src="./rsc/img/photo-cv.jpeg" alt="cadre">
             </section>
+        
+        <section id ="after-welcome-page">
+            <section id="formationSection">
+                <h1>Formations</h1>
+                <div id="butDiv" class="blocPerFormation">
+                    <div class="formationButton">
+                        <div class="titreButton">
+                            <span><h2>IUT Informatique</h2></span>
+                            <span><h2>2022 - En Cours</h2></span>
+                        </div>
+                        <div>
+                            <span class="plusMinusSign">+</span>
+                        </div>
+                        <div class="plusMinusSpace">&nbsp;</div>                   
+                    </div>
+                    
+                    <div class="formationTextDiv">
+                        <div class="formationLocationDiv">
+                            <img class ="locationPinImg" src="./rsc/img/pin.png" alt="location pin picture">
+                            <span>BUT de Lille</span>
+                        </div>
+                        <div class="formationText">Actuellement en deuxième année en<span style="color: rgb(196, 103, 41);"> spécialité déploiement d'applications sécurisées</span> (systèmes et réseaux). Je sortirai de la formation, très complète, avec un bon niveau, autant en développement qu'en réseaux.</div> 
+                    </div>
+                </div>
+
+                <div id="inalcoDiv" class="blocPerFormation">
+                        <div class="formationButton">   
+                            <div class="titreButton">
+                                <span><h2>Licence Etude du Japon</h2></span>
+                                <span><h2>2017 - 2020</h2></span>
+                            </div>
+                            <div>
+                                <span class="plusMinusSign">+</span>
+                            </div>
+                            <div class="plusMinusSpace">&nbsp;</div>                   
+                        </div>
+
+                    <div class="formationTextDiv">
+                        <div class="formationLocationDiv">
+                            <img class ="locationPinImg" src="./rsc/img/pin.png" alt="location pin picture">
+                            <span>INALCO, Paris 13ème</span>
+                        </div>
+                        <div class="formationText">Licence de langues, littératures et civilisations étrangères et régionales - Mention bien</br></br>A l'Institut Nationale des Langues et Civilisation Orientale. J'y ai reçu un  enseignement couvrant <span style="color: rgb(196, 103, 41);">la langue mais aussi l'économie, la politique, les relations internationales et la littérature</span>. J'ai aussi suivi un module en étude de l'environnement d'un point de vue économique</div> 
+                    </div>
+                </div>
+
+                <div id="inalcoDiv" class="blocPerFormation">
+                        <div class="formationButton">
+                            <div class="titreButton">
+                                <span><h2>Baccalauréat Scientifique</h2></span>
+                                <span><h2>2017</h2></span>
+                            </div>
+                            <div>
+                                <span class="plusMinusSign">+</span>
+                            </div>
+                            <div class="plusMinusSpace">&nbsp;</div>                   
+                        </div>
+                    <div class="formationTextDiv">
+                        <div class="formationLocationDiv">
+                            <img class ="locationPinImg" src="./rsc/img/pin.png" alt="location pin picture">
+                            <span>Lycée Les Pierres Vives, Carrière-sur-Seine</span>
+                        </div>
+                        <div class="formationText">Mention bien</br>Majeur en Science de l'Ingénieur option Informatique et Sciences du Numérique, baccalauréat obtenu avant la réforme.</div> 
+                    </div>
+                </div>
+            </section>
+
+            <section id="competenceSection">
+                <h1>Compétences</h1>
+                <div class="all-competences">
+                    <div class="parcoursB-competences">
+                        <div class="adminsys-competences">
+                            <div class="parcoursB-competences-title">
+                                <h2>Admnistration système</h2>
+                            </div>
+                            <span>Installation et configuration des systèmes Linux</span>
+                            <ul class="decorated-list">
+                                <li>Gestion des utilisateurs et droits</li>
+                                <li>Partitionnement et gestion des disques</li>
+                                <li>Scripting Shell et Python</li>
+                                <li>Sécurisation, cryptographie (SSH, TLS, GnuPG, md5sum, shasum)</li>
+                                <li>Virtualisation (Virtual Box)</li>
+                            </ul>
+
+                            <span>Installation et configuration de services</span>
+                            <ul class="decorated-list">
+                                <li>Reverse proxy : nginx, apache, traefik</li>
+                                <li>Installation et configuration de serveurs Web (nginx, apache)</li>
+                            </ul>
+                            <span>DevOps / automatisation</span>
+                            <ul class="decorated-list">
+                                <li>Git (GitLab, GitHub)</li>
+                                <li>Containers (docker)</li>
+                                <li>Ansible</li>
+                            </ul>
+
+                            <ul class="blob-item">
+                                <li>Linux</li>
+                                <li>Script</li>
+                                <li>Python</li>
+                                <li>Chiffrement</li>
+                                <li>Bash Shell</li>
+                                <li>Virtualisation</li>
+                                <li>Reverse proxy</li>
+                                <li>Apache</li>
+                                <li>Nginx</li>
+                                <li>Traefik</li>
+                                <li>Git</li>
+                                <li>Docker</li>
+                                <li>Ansible</li>                             
+                            </ul>
+                        </div>
+
+                        <div class="reseaux-competences">
+                            <h2>Réseaux</h2>
+                            <ul class="decorated-list">
+                                <li>Protocoles (TCP, IPv4, IPv6), adressage</li>
+                                <li>Routage (RIP, OSPF, BGP)</li>
+                                <li>Configuration des matériels Cisco</li>
+                                <li>Routeurs (interfaces et routage)</li>
+                                <li>Sécurisation (pare-feu)</li>
+                                <li>Commutateurs (STP, VLAN)</li>
+                            </ul>
+                            <ul class="blob-item">
+                                <li>Cisco</li>
+                                <li>Routeurs</li>
+                                <li>Sécurisation</li>
+                                <li>Commutateurs</li>
+                            </ul>
+                            <img src="./rsc/img/global-network.png" alt="network" class="network-img">
+
+                        </div>
+                    </div>
+                    <div class="reste-competences">
+                        <div class="prog-sys-competences">
+                            <h2>Programmation système</h2>
+                            <ul class="blob-item">
+                                <li>Langage C : appels systèmes</li>
+                            </ul>
+                        </div>
+                        <div class="sql-competences">
+                            <h2>Web et exploitation de base de données</h2>
+                            <ul class="blob-item">
+                                <li>SQL</li>
+                                <li>Servlet</li>
+                                <li>Apache</li>
+                                <li>Tomcat</li>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                            </ul>
+                        </div>
+                        <div class="poo-competences">
+                            <h2>Programmation orientée objet</h2>
+                            <ul class="blob-item">
+                            <li>Java</li>
+                            <li>Tests d'intégrations continus</li>
+                            <li>Agile</li>
+                            <li>Clean Code</li>
+                            <li>SOLID</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projetsSection">
+                <h1>Projets</h1>
+                <div class="main-projets-container">
+                    <div class="vide">vide</div>
+
+                    <div class="deploi-projet">
+                        <div class="projet-image-container">
+                            <div class="projet-descr">Une entreprise de développement logiciel souhaite améliorer les modes de communication à la fois des collaborateurs entre eux, mais également entre les collaborateurs et les clients de l'entreprise (notamment à des fins de support). La solution sera basée sur le standard Matrix</div>
+                        
+                        </div>
+                            <div class="projet-title-container">
+                            <h3 class="projet-titre-deploi">Déploiement de service de chat et forum de discussion</h3>
+                            <span class="projet-sous-titre">Systèmes et réseaux</span>
+                        </div>
+                    </div>
+                    <div class="vide-milieu" style="width:1500px;">vide</div>
+                    <div class="agile-projet">
+                        <div class="projet-image-container">
+                            <div class="projet-descr-agile">Projet de développement d'un jeu vidéo en suivant la méthode Agile durant 5 jours. Nous étions suivi par des Scrum Master de métier. Au vu de la courte durée du projet le rythme était celui-ci : 30min de plannification, 1h30 de sprint, 30min de rétrospective.</br>&nbsp;</br><a href="https://gitlab.univ-lille.fr/2023-projet-agile-de-rentree/groupe-10">Lien vers le projet</a></div>
+                        </div>
+                        <div class="projet-title-container">
+                            <h3 class="projet-titre">Projet en méthode Agile</h3>
+                            <span class="projet-sous-titre">Développement Orienté Objet</span>
+                        </div> 
+                    </div>
+                    <div class="vide">vide</div>
+
+                </div>
+            </section>
+            <section id="experiencesSection" style="padding-bottom: 150px;"">
+                <h1>Expériences professionnelles</h1>
+                <div class="experience-main-container">
+                    <div class="experience-date">2023</div>
+                    <div class="experience-sub-container">
+                        <div class="experience-descr">
+                            <h2>Interprète français - japonais - anglais</h2>
+                            <h3><img src="rsc/img/pin.png">Promotion sur divers événements, Paris</h3>
+                            <span>Depuis 2018 tous les ans en événementiel.</br> Métier demandant une forte <span style="color: rgb(196, 103, 41);">adaptabilité culturelle</span>, une rigueur “à la japonaise” en ayant conscience de mon environnement français. J'y ai développé mon écoute et <span style="color: rgb(196, 103, 41);">une communication précise et adaptée</span> à mon interlocuteur.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-main-container">
+                    <div class="experience-date">2023</div>
+                    <div class="experience-sub-container">
+                        <div class="experience-descr">
+                            <h2>Welcome Manager Junior, accueil en entreprise</h2>
+                            <h3><img src="rsc/img/pin.png">Welcome at Work, Paris et la Défense</h3>
+                            <span>4 Mois au total.</br>J'ai travaillé sur la <span style="color: rgb(196, 103, 41);">coordination interdépartementale</span> en collaborant avec les équipes de sécurité, de maintenance et les entreprises locataires de l'immeuble. Cette expérience a renforcé ma <span style="color: rgb(196, 103, 41);">discrétion professionnelle</span>, essentielle dans la gestion d'<span style="color: rgb(196, 103, 41);">informations sensibles et confidentielles.</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-main-container">
+                    <div class="experience-date">2022</div>
+                    <div class="experience-sub-container">
+                        <div class="experience-descr">
+                            <h2>Conseillère de vente prêt-à-porter B to C / B to B</h2>
+                            <h3><img src="rsc/img/pin.png">Hugo Boss, Muji, Naturellement</h3>
+                            <span>De 2020 à 2022, en tant qu'ambassadrice pour diverses marques de prêt-à-porter, j'ai cultivé des compétences en <span style="color: rgb(196, 103, 41);">adaptation, négociation et gestion des priorités</span>. Dans un environnement physique et exigeant, j'ai <span style="color: rgb(196, 103, 41);">optimisé mes performances</span>, démontrant <span style="color: rgb(196, 103, 41);">résilience et excellence</span> en service client. Évoluant dans un milieu compétitif, j'ai harmonisé service client et atteinte des objectifs de vente, en favorisant un esprit d'équipe.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </section>
+
     </main>
     
-    <footer>
+    <footer id="footer">
         <section class="up-footer">
             <ul class="footer-mail-linkedin">
                 <li><h3>leroy.el@outlook.com</h3></li>
@@ -270,20 +508,23 @@
             </ul>
             <ul class="footer-navigation">
                 <li><h3>Navigation</h3></li>
+                <li><a href="#">Accueil</a></li>
                 <li><a href="#presentationSection">Présentation</a></li>
-                <li><a>Formations</a></li>
-                <li><a>Compétences</a></li>
-                <li><a>Expériences</a></li>
-                <li><a>Projets</a></li>
-                <li><a>Contacts</a></li>
+                <li><a href="#formationSection">Formations</a></li>
+                <li><a href="#competenceSection">Compétences</a></li>
+                <li><a href="#projetsSection">Projets</a></li>
+                <li><a href="#experiencesSection">Expériences</a></li>
+                <li><a href="#footer">Contacts</a></li>
             </ul>
         </section>
+
         <section class="bottom-footer">
             <div><a href="#">Remonter &#9650;</a></div>
             <div>2023 | Elise LEROY</div>
         </section>
     </footer>
+    <script src="./js/accueil.js"></script>
     <script src="./js/navbar.js"></script>
-    
+    <script src="./js/formation.js"></script>
 </body>
 </html>

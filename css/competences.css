@@ -1,0 +1,137 @@
+#competenceSection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    color: #ececec;
+    margin-top: 6em;
+}
+
+#competenceSection h1{
+    color: #ececec;
+    font-size: 3em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-weight: 2000;
+}
+
+.parcoursB-competences-title{
+    display: block;
+}
+
+.parcoursB-competences h2{
+    display: inline-block;
+    background: linear-gradient(to top, #2f2d96 0%, #ad5d11 30%, transparent 20%);
+    color: #ececec; /* Set the color you want for the text */
+    font-size: 2em;
+    margin-bottom: 40px;
+    font-weight: 2000;
+
+}
+
+
+
+.parcoursB-competences {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 2em;
+    padding-bottom: 1em;
+}
+
+.parcoursB-competences>div{
+    border-style: solid;
+    border-color:rgba(163, 159, 159, 0.925) ;
+    border-width: 4px;
+}
+
+.adminsys-competences {
+    width: 40%;
+    margin-right: 2em;
+    padding: 2em;
+    padding-bottom: 20px;
+}
+
+
+.adminsys-competences span{
+    font-size: 1.3em;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: #ececec;
+    
+}
+
+.reste-competences h2{
+    font-size: 1.3em;
+    font-weight: 2000;
+    margin-bottom: 30px;
+    display: inline-block;
+    background: linear-gradient(to top, #2f2d96 0%, #ad5d11 30%, transparent 20%);
+
+}
+
+.reseaux-competences {
+    width: 30%;
+    padding: 2.5em;
+    padding-bottom: 0;
+
+}
+
+.reste-competences{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.reste-competences>div{
+    border-style: solid;
+    border-color: rgba(163, 159, 159, 0.925);
+    border-width: 4px;
+    margin-top: 20px;
+    margin: 0.8em;
+    padding: 1em;
+
+}
+
+
+.decorated-list {
+    margin-top: 1em;
+    margin-bottom: 40px;
+}
+.decorated-list li{
+    border-left: #2f2d96 solid 2px;
+    padding-left: 10px;
+    margin: 10px;
+    
+}
+
+.blob-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.blob-item li{
+    width: auto;
+    word-wrap: break-word;
+    background: linear-gradient(to top, #2f2d96 0%, #2f2d96 100%, transparent 20%);
+    color: whiecececte;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: "Roboto Mono",Sans-serif;
+}
+
