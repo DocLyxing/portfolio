@@ -124,8 +124,15 @@ li{
     padding-left: 7em;
 }
 
-.three-main-points p {
-    text-align: start;
+.three-main-points div {
+    display: flex;
+    align-items: flex-start;
+}
+
+.three-main-points p{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 }
 
 #transition{
