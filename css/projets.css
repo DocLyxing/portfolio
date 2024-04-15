@@ -20,8 +20,13 @@
 .main-projets-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
 
+}
+
+.main-projets-container>*{
+    flex: 1 1 100px;
 }
 
 .main-projets-container div{
@@ -67,6 +72,10 @@
     align-items: center;    
 }
 
+.deploi-projet{
+    margin-top: 20px;
+}
+
 .projet-titre-deploi{
     padding-right: 50px;
 
@@ -99,10 +108,12 @@
     position: relative;
     min-width: 300px;
     min-height: 300px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../rsc/img/agile.png");
+    max-width: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../rsc/img/odoo.png");
     color: transparent;
     background-repeat: no-repeat;
     background-position: center; 
+    background-size: contain;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +131,7 @@
 
 .projet-descr-agile:hover {
     color: #ececec;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.856), rgba(0, 0, 0, 0.856)), url("../rsc/img/agile.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.856), rgba(0, 0, 0, 0.856)), url("../rsc/img/odoo.png");
     transition: all 0.5s ease;
 }
 
@@ -128,6 +139,35 @@
 .projet-descr:hover {
     color: #ececec;
     background-image: linear-gradient(rgba(0, 0, 0, 0.856), rgba(0, 0, 0, 0.856)), url("../rsc/img/ssh.png");
+    transition: all 0.5s ease;
+}
+
+.projet-descr-mocap{
+    position: relative;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("../rsc/img/mocap.jpg");
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    padding-left: 50px;
+    font-size: 20px;
+    line-height: px;
+    margin: 20px;
+    margin-bottom: 5px;
+    transition: all 0.5s ease;
+}
+
+.projet-descr-mocap:hover {
+    color: #ececec;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.856), rgba(0, 0, 0, 0.856)), url("../rsc/img/mocap.jpg");
     transition: all 0.5s ease;
 }
 
