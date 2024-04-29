@@ -1,3 +1,4 @@
+
 #projetsSection{
     margin-top: 5em;
 }
@@ -12,31 +13,142 @@
     justify-content: center;    
 }
 
+.row {
+    width: 70%;
+    left: 50%;
+    margin: 0 auto;
+}
+
+
+.figure {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+    .figure:hover img {
+        opacity: 0.1;
+    }
+
+    .figure:hover .middle {
+        opacity: 1;
+    }
+
+/* caption styling  */
+figcaption {
+    color: white;
+    padding: 1rem;
+}
+
+/* reduces the top margin on the h2, bottom on the p, and leaves a 0.5rem gap between the two */
+figcaption * {
+    margin: 0.5rem;
+}
+
+/* hack to make images flexible */
+img {
+    width: 450px;
+    height: 250px;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.image-container {
+    position: relative;
+}
+
+.middle {
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text {
+    color: white;
+    font-size: 16px;
+    padding: 16px 0;
+    width: 450px;
+}
+
+
+@media (min-width: 600px) {
+    .row {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        gap: 1%;
+    }
+
+    figure {
+        flex-basis: 48%;
+    }
+}
+
+/* outside the MQ's since they apply at all dimensions */
+.reverse {
+    flex-flow: row-reverse wrap;
+}
+
+.order-1 {
+    order: 1;
+}
+
+.order-2 {
+    order: 2;
+}
+
+.order-3 {
+    order: 3;
+}
+
+/* default styling, no changes needed here, even with responsive design */
+
+/* set the layout to border box model */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+
+
+/*
 #projetsSection img{
     width: 25em;
     height: 25em;
 }
 
-.main-projets-container{
+.first-projets-container{
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-
-
+    justify-content: space-evenly;
 }
 
-.main-projets-container>*{
-    flex: 1 1 100px;
+.second-projets-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.main-projets-container div{
-    width: 100%;
-    height: 100%;
+.image-caption-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
+    justify-content: flex-start;
+    align-items: center;
 }
+
 
 .main-projets-container h3{
     color: #ececec;
@@ -181,3 +293,5 @@
     visibility: hidden;
 
 }
+
+*/
