@@ -46,7 +46,7 @@ figcaption * {
 }
 
 /* hack to make images flexible */
-img {
+.row img {
     width: 450px;
     height: 250px;
     opacity: 1;
