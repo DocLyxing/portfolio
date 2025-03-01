@@ -31,9 +31,12 @@
 #presentationSection img{
 
     width: 100%;
-    height: 100%;
+    height: 90%;
     margin-left: 8em;
     max-width: 250px;
     max-height: 400px;
     object-fit: cover;
+    width: 100%;
+    object-position: bottom;  
+    
 }

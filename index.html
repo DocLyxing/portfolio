@@ -73,9 +73,9 @@
     
     const vec3 black = vec3(0.0);
     //0.89, 0.34, 0.11
-    const vec3 color1 = vec3(0.5, 0.25, 0.11);
-    const vec3 color2 = vec3(0.56, 0.64, 0.64);
-    const vec3 color3 = vec3(0.16, 0.26, 0.47);
+    const vec3 color1 = vec3(0.5, 0.25, 0.11); //0.5 0.25 0.11
+    const vec3 color2 = vec3(0.56, 0.64, 0.64);  //0.56 0.64 0.64
+    const vec3 color3 = vec3(0.16, 0.26, 0.47); //0.16 0.26 0.47
     
     float triangleFunc(in float value, in float cap){
         return abs(mod(value,cap)-cap/2.)*2.;
@@ -191,6 +191,7 @@
       fColor = mix(color2*clampedR, color1*clampedR, max(cosThing, 0.));
         */
 
+      //fColor = 1.0 - fColor; inversion couleur
       gl_FragColor = vec4(fColor, 1.0);
     }
   </script>
@@ -241,7 +242,7 @@
                 <ul class ="three-main-points">
                     <li class="point">Etudiante en Informatique des systèmes et réseaux</li>
                     <li class="point">Apprentie Ingénieur système, réseaux et DevOps</li>
-                    <li class="point"><div><p>A la Direction générale du Trésor au ministère de l'Économie, des Finances et de la Relance</p></div></li>
+                    <li class="point"><div><p>A la Direction générale du Trésor au ministère de l'Économie, <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;des Finances et de la Souveraineté industrielle et numérique</p></div></li>
                 </ul>  
             </section>
         </section>
@@ -251,9 +252,9 @@
             <section id = "presentationSection">
                 <section class="presentationTextSection">
                     <h2>Enchantée</h2>
-                    <div>Etudiante en troisième année de BUT informatique à l'IUT de Lille, je suis alternante depuis la rentrée 2024 dans <span style="color: rgb(196, 103, 41);">l'exploitation des systèmes et réseaux</span> après avoir effectué un stage de 3 mois au Japon ! J'ai un intérêt particulier pour la couche infrastructure et physique. </div>
+                    <div style="margin-top: 3em;">Etudiante en troisième année de BUT informatique à l'IUT de Lille, je suis alternante depuis la rentrée 2024 au <span style="color: rgb(196, 103, 41);">pôle d'exploitation des systèmes et réseaux</span> de la Direction générale du Trésor. J'ai un intérêt particulier pour l'architecture réseau et la cybersécurité.</div>
                 </section>
-                <img src="./rsc/img/photo-cv.jpeg" alt="cadre">
+                <img src="./rsc/img/moi.jpg" alt="cadre">
             </section>
         
         <section id ="after-welcome-page">
@@ -262,7 +263,7 @@
                 <div id="butDiv" class="blocPerFormation">
                     <div class="formationButton">
                         <div class="titreButton">
-                            <span><h2>IUT Informatique</h2></span>
+                            <span><h2>BUT Informatique</h2></span>
                             <span><h2>2022 - En Cours</h2></span>
                         </div>
                         <div>
@@ -274,9 +275,9 @@
                     <div class="formationTextDiv">
                         <div class="formationLocationDiv">
                             <img class ="locationPinImg" src="./rsc/img/pin.png" alt="location pin picture">
-                            <span>BUT de Lille</span>
+                            <span>IUT de Lille</span>
                         </div>
-                        <div class="formationText">Actuellement en deuxième année en<span style="color: rgb(196, 103, 41);"> spécialité déploiement d'applications sécurisées</span> (systèmes et réseaux). Je sortirai de la formation, très complète, avec un bon niveau, autant en développement qu'en réseaux.</div> 
+                        <div class="formationText">Actuellement en troisième année,<span style="color: rgb(196, 103, 41);"> spécialité déploiement d'applications sécurisées</span> (systèmes et réseaux). Je sortirai de la formation, très complète, avec un bon niveau, autant en développement qu'en réseaux. Je suis cette formation en alternance.</div> 
                     </div>
                 </div>
 
@@ -297,7 +298,7 @@
                             <img class ="locationPinImg" src="./rsc/img/pin.png" alt="location pin picture">
                             <span>INALCO, Paris 13ème</span>
                         </div>
-                        <div class="formationText">Licence de langues, littératures et civilisations étrangères et régionales - Mention bien</br></br>A l'Institut Nationale des Langues et Civilisation Orientale. J'y ai reçu un  enseignement couvrant <span style="color: rgb(196, 103, 41);">la langue mais aussi l'économie, la politique, les relations internationales et la littérature</span>. J'ai aussi suivi un module en étude de l'environnement d'un point de vue économique</div> 
+                        <div class="formationText">Licence de langues, littératures et civilisations étrangères et régionales - Mention bien</br></br>A l'Institut Nationale des Langues et Civilisation Orientale. J'y ai reçu un  enseignement couvrant <span style="color: rgb(196, 103, 41);">la langue mais aussi l'économie, la politique, les relations internationales et la littérature</span>. J'ai aussi suivi un module en étude de l'environnement d'un point de vue économique. </div> 
                     </div>
                 </div>
 
@@ -334,20 +335,20 @@
                             <ul class="decorated-list">
                                 <li>Gestion des utilisateurs et droits</li>
                                 <li>Partitionnement et gestion des disques</li>
-                                <li>Scripting Shell et Python</li>
                                 <li>Sécurisation, cryptographie (SSH, TLS, GnuPG, md5sum, shasum)</li>
-                                <li>Virtualisation (Virtual Box)</li>
+                                <li>Virtualisation (Virtual Box, Vagrant, Terraform)</li>
                             </ul>
 
                             <span>Installation et configuration de services</span>
                             <ul class="decorated-list">
-                                <li>Reverse proxy : nginx, apache, traefik</li>
+                                <li>Reverse proxy (nginx, apache, traefik)</li>
                                 <li>Installation et configuration de serveurs Web (nginx, apache)</li>
                             </ul>
                             <span>DevOps / automatisation</span>
                             <ul class="decorated-list">
-                                <li>Git (GitLab, GitHub)</li>
+                                <li>Git (GitLab, GitHub, CI-CD)</li>
                                 <li>Containers (docker)</li>
+                                <li>Scripting Shell et Python</li>
                                 <li>Ansible</li>
                             </ul>
 
@@ -371,36 +372,53 @@
                         <div class="reseaux-competences">
                             <h2>Réseaux</h2>
                             <ul class="decorated-list">
-                                <li>Protocoles (TCP, IPv4, IPv6), adressage</li>
-                                <li>Routage (RIP, OSPF, BGP)</li>
-                                <li>Configuration des matériels Cisco</li>
-                                <li>Routeurs (interfaces et routage)</li>
-                                <li>Sécurisation (pare-feu)</li>
-                                <li>Commutateurs (STP, VLAN)</li>
-                                <li>Adressage (VLSM)</li>
+                                <span>Déploiement</span>
+                                <ul class="decorated-list">
+                                    <li>Protocoles (TCP, IPv4, IPv6)</li>
+                                    <li>Système de routage (RIP, OSPF, BGP)</li>
+                                    <li>Adressage (VLSM, DHCP)</li>
+                                    <li>Commutation (STP, VLAN)</li>
+                                    <li>Cloud Computing (Azure, Google GCP)</li>
+                                </ul>
+
+                                <span>Sécurisation</span>
+                                <ul class="decorated-list">
+                                    <li>Règles de pare-feu propres</li>
+                                    <li>Mise à niveau propre</li>
+                                    <li>Maitrise de l'espace web</li>
+                                    <li>Etablissement d'une politique de sécurité</li>
+                                    <li>Test d'intrusion</li>
+                                </ul>
+
+                                <span>Gestion d'incidents</span>
+                                <ul class="decorated-list">
+                                    <li>Lecture de trame réseaux</li>
+                                    <li>Etablissement d'un diagnostic</li>
+                                    <li>Communication avec les utilisateurs</li>
+                                </ul>
                             </ul>
+
                             <ul class="blob-item">
                                 <li>Cisco</li>
                                 <li>Routeurs</li>
-                                <li>Sécurisation</li>
-                                <li>Commutateurs</li>
+                                <li>Brute force</li>
+                                <li>WireShark</li>
+                                <li>StormShield</li>
+                                <li>Azure</li>
+                                <li>Google GCP</li>
                             </ul>
-                            <img src="./rsc/img/global-network.png" alt="network" class="network-img">
+                            
 
                         </div>
                     </div>
                     <div class="reste-competences">
-                        <div class="prog-sys-competences">
-                            <h2>Programmation système</h2>
-                            <ul class="decorated-list">
-                                <li>Appels systèmes</li>
-                            </ul>
-                            <ul class="blob-item">
-                                <li>Langage C</li>
-                            </ul>
-                        </div>
                         <div class="sql-competences">
                             <h2>Web et exploitation de base de données</h2>
+                            <ul class="decorated-list">
+                                <li>Développement web</li>
+                                <li>Gestion de base de données et optimisation des requêtes</li>
+                                <li>Serveurs et applications (exploitation d'API)</li>
+                            </ul>
                             <ul class="blob-item">
                                 <li>SQL</li>
                                 <li>Servlet</li>
@@ -409,24 +427,24 @@
                                 <li>JSP</li>
                                 <li>HTML</li>
                                 <li>CSS</li>
+                                <li>Postgresql</li>
                             </ul>
                         </div>
                         <div class="poo-competences">
-                            <h2>Programmation orientée objet</h2>
+                            <h2>Programmation</h2>
+                            <ul class="decorated-list">
+                                <li>Orientée objet</li>
+                                <li>Système (appel systèmes)</li>
+                                <li>Scripting</li>
+                            </ul>
                             <ul class="blob-item">
                             <li>Java</li>
-                            <li>C#</li>
+                            <li>Langage C</li>
+                            <li>C++</li>
                             <li>Tests d'intégrations continus</li>
-                            <li>Agile</li>
                             <li>Clean Code</li>
-                            <li>SOLID</li>
-                            </ul>
-                        </div>
-                        <div class="poo-competence">
-                            <h2>Programmation événementielle</h2>
-                            <ul class="blob-item">
-                            <li>Unity</li>
-                            <li>C#</li>
+                            <li>Bash</li>
+                            <li>Python</li>
                             </ul>
                         </div>
                     </div>
@@ -436,16 +454,31 @@
             <section id="projetsSection">
                 <h1>Projets</h1>
 
-                <div class="row">
+            <div class="row">
+                
                     <div class="figure">
                         <div class="image-container">
-                            <img src="rsc/img/mocap.jpg" alt="image de motion capture" />
+                            <img src="rsc/img/dgtresor.png" alt="logo de la dgtresor" />
                             <div class="middle">
-                                <div class="text">Stage effectué au Japon. Nous avons réalisé la capture de mouvement de danses traditionnelles pour notre client et avons travaillé sur leur interprétation machine. Les technologies utilisées sont Unity, C#, Microsoft Kinect Azure.</div>
+                                <div class="text">Projet tenu au secret, je ne peux pas beaucoup écrire dessus.</br>Un bastion, en informatique, est un serveur sécurisé qui sert de point d'accès intermédiaire pour gérer et accéder à des serveurs internes, renforçant ainsi la sécurité du réseau.</br>&nbsp;</br><a>Le projet étant interne, il n'est pas partageable.</a></div>
                             </div>
                         </div>
                         <figcaption>
-                            <h3>Interprétation machine de motion capture</h3>
+                            <h3>Projet d'alternance, implémenter un bastion</h3>
+                            <p>Système et réseaux</p>
+                        </figcaption>
+                    </div>
+                
+
+                    <div class="figure">
+                        <div class="image-container">
+                            <img src="rsc/img/motion-capture.png" alt="image de motion capture" />
+                            <div class="middle">
+                                <div class="text">Durant mon stage Erasmus+, j'ai travaillé sur l'interprétation des données de Motion Capture en C++. Le projet se divisait en deux volets principaux : tout d'abord, la détection et l’identification des poses capturées via Microsoft Azure Kinect. Ensuite, j'ai traduit ces poses au format JSON, ce qui a permis d'optimiser la précision et le réalisme des images générées par des modèles d’intelligence artificielle. Cette fonctionnalité offrait la possibilité à une personne de prendre une pose devant la caméra, puis de récupérer le fichier généré pour produire une image réaliste d'une personne adoptant exactement cette même pose.</br>&nbsp;</br><a href="https://gitlab.univ-lille.fr/elise.leroy2.etu/poseestimation">Lien vers le projet</a></div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h3>Capture de mouvement et son usage en IA</h3>
                             <p>Développement orienté objet et événementiel</p>
                         </figcaption>
                     </div>
@@ -524,7 +557,7 @@
 
             </section>
 
-                <section id="experiencesSection" style="padding-bottom: 150px;"">
+                <section id="experiencesSection" style="padding-bottom: 150px;">
                     <h1>Expériences professionnelles</h1>
 
                     <div class="experience-main-container">
@@ -532,8 +565,16 @@
                         <div class="experience-sub-container">
                             <div class="experience-descr">
                                 <h2>Apprentie Ingénieur système, réseaux et DevOps</h2>
-                                <h3><img src="rsc/img/pin.png">Ministère de l'Économie, des Finances et de la Relance, Paris</h3>
-                                <span>A la Direction générale du Trésor je me prépare à mon futur métier de spécialiste. Je participe entre autres <span style="color: rgb(196, 103, 41);">à la transition vers Linux des équipements</span> de la direction et aux <span style="color: rgb(196, 103, 41);">missions de maintenance</span> des services. Je serai accompagnée jusqu'au master.</span>
+                                <h3><img src="rsc/img/pin.png">Direction générale du Trésor, Paris</h3>
+                                <span>A la Direction générale du Trésor je me prépare à mon futur métier de spécialiste. Je participe entre 
+                                    autres <span style="color: rgb(196, 103, 41);">à la transition vers Linux des équipements</span> de la 
+                                    direction et aux <span style="color: rgb(196, 103, 41);">missions de maintenance</span> des services. 
+                                    Mon premier projet à la DG Trésor est d'implémenter un bastion dans un contexte de réforme des postes de 
+                                    travail (voir partie Projet). La direction gérant toute son infrastructure sans dépendre de sous-traitant, 
+                                    j'ai l'occasion d'y découvrir tous les aspects du métier d'administrateur systèmes et 
+                                    réseaux. <span style="color: rgb(196, 103, 41);">J'y ai d'ailleurs découvert ma préférence pour le réseau</span>. 
+                                    En plus de bénéficier de ce cadre de travail exceptionnel à Bercy, j'ai la chance d'être accompagnée jusqu'au master 
+                                    en alternance. Ce projet m'a permis d'apprendre à organiser et coordonner mon travail au sein d'une équipe.</span>
                             </div>
                         </div>
                     </div>
@@ -542,9 +583,9 @@
                         <div class="experience-date"> 2024 - 4 mois</div>
                         <div class="experience-sub-container">
                             <div class="experience-descr">
-                                <h2>Stage informatique</h2>
+                                <h2>Stage au Japon : motion capture</h2>
                                 <h3><img src="rsc/img/pin.png">Hirose Kôsen de Sendai, Japon</h3>
-                                <span>Durant ce stage en ERASMUS+ j'ai travaillé sur <span style="color: rgb(196, 103, 41);">l'inteprétation machine de Motion Capture</span> avec les langages C# et Unity. L'objectif de la mission était de capturer les mouvements de danses traditionnelles pour notre client.</span>
+                                <span>Formidable échange culturel m'ayant donné l'occasion de travailler sur un projet que je n'aurais pas pu faire en France : <span style="color: rgb(196, 103, 41);">l'interprétation machine de capture de mouvement en C++</span>, décrit plus haut dans la partie Projet. Cette expérience était passionante tant d'un point de vue technique que culturel. Technique car elle m'a donné l'opportunité de travailler sur un outil rarement disponible en université Française : la Microsoft Azure Kinect. Et culturelle car bien que franco-japonaise, cette expérience m'a offert une meilleure compréhension du monde professionnel au Japon.</span>
                             </div>
                         </div>
                     </div>
@@ -555,7 +596,7 @@
                             <div class="experience-descr">
                                 <h2>Interprète français - japonais - anglais</h2>
                                 <h3><img src="rsc/img/pin.png">Promotion sur divers événements, Paris</h3>
-                                <span>Depuis 2018 tous les ans en événementiel.</br> Métier demandant une forte <span style="color: rgb(196, 103, 41);">adaptabilité culturelle</span>, une rigueur “à la japonaise” en ayant conscience de mon environnement français. J'y ai développé mon écoute et <span style="color: rgb(196, 103, 41);">une communication précise et adaptée</span> à mon interlocuteur.</span>
+                                <span>Depuis 2018, tous les ans en événementiel.</br> Métier demandant une forte <span style="color: rgb(196, 103, 41);">adaptabilité culturelle</span>, une rigueur “à la japonaise” en ayant conscience de mon environnement français. J'y ai développé mon écoute et <span style="color: rgb(196, 103, 41);">une communication précise et adaptée</span> à mon interlocuteur.</span>
                             </div>
                         </div>
                     </div>

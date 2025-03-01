@@ -31,8 +31,6 @@
 
 }
 
-
-
 .parcoursB-competences {
     display: flex;
     flex-direction: row;
@@ -56,7 +54,7 @@
 }
 
 
-.adminsys-competences span{
+.parcoursB-competences span{
     font-size: 1.3em;
     font-weight: bolder;
     margin-bottom: 30px;
@@ -75,8 +73,8 @@
 }
 
 .reseaux-competences {
-    width: 30%;
-    padding: 2.5em;
+    width: 40%;
+    padding: 2em;
     padding-bottom: 0;
 
 }
@@ -85,24 +83,28 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+
+    padding: 2em;
+    padding-bottom: 1em;
 
 
 }
+
 
 .reste-competences>div{
     border-style: solid;
     border-color: rgba(163, 159, 159, 0.925);
     border-width: 4px;
-    margin-top: 20px;
-    margin: 0.8em;
+    /*margin-top: 20px;*/
+    margin: 1em;
     padding: 1em;
+    width: 40%;
+    margin-top: -0.9em;
 
 }
 
-
 .decorated-list {
-    margin-top: 1em;
+    /*margin-top: 1em;*/
     margin-bottom: 40px;
 }
 .decorated-list li{
@@ -133,5 +135,7 @@
     border-radius: 20px;
     font-size: 12px;
     font-family: "Roboto Mono",Sans-serif;
+    color: #ad5d11;
+    font-weight: bold;
 }
 
